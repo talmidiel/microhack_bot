@@ -20,7 +20,13 @@ class Bot {
     help() {
         this.message.reply("Voici la liste des commandes qui sont actuellement supportées par le bot :" +
             "\n\n\n     `//help` :   affiche ce message d'aide" +
-            "\n\n     `//ping` :   repond pong au message et indique le temp que le bot a mit a repondre")
+            "\n\n     `//ping` :   repond pong au message et indique le temp que le bot a mit a repondre" +
+            "\n\n     `//github` :   affiche le lien vers notre github")
+    }
+
+    github() {
+        this.message.reply('voici le lien de notre github : https://github.com/talmidiel/microhack_docs_bot, ' +
+            'n\'hésite pas a venir jeter un oeuil :wink:')
     }
 
     wrongCommand() {
@@ -32,6 +38,7 @@ class Bot {
         switch (this.command) {
             case 'ping': this.ping(); break
             case 'help': this.help(); break
+            case 'github': this.github(); break
             default: this.wrongCommand()
         }
     }
