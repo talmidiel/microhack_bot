@@ -10,6 +10,10 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
+// preparing all the functions for the bot to execute
+const ping = (message) => message.reply(`Pong! ce message a une latence de ${ Date.now() - message.createdTimestamp}ms.`)
+const wrongCommand = (message) => message.reply('désolé mais cette commande n\'est pas prise en charge par le bot')
+
 // Read from new messages add some actions depending on what they contains
 const prefix = "//"
 client.on("messageCreate", (message) => {
@@ -20,11 +24,12 @@ client.on("messageCreate", (message) => {
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
-    command === 'ping' ?
-        message.reply(`Pong! ce message a une latence de ${ Date.now() - message.createdTimestamp}ms.`)
-        :
-        message.reply('désolé mais cette commande n\'est pas prise en charge par le bot')
+
+    switch (command) {
+        case 'ping': ping(message); break
+        default: wrongCommand(message)
+    }
 });
 
-// Login to Discord with your client's token
+// Login to Discord with the client's token
 client.login(token);
