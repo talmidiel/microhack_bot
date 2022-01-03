@@ -1,40 +1,57 @@
-// Require the necessary discord.js classes
-const { Client, Intents } = require('discord.js');
-const { token } = require('../config.json');
+const {Client, Intents} = require("discord.js");
+const {token} = require("../config.json");
 
-// Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-
-// When the client is ready, run this code (only once)
-client.once('ready', () => {
-    console.log('Ready!');
-});
-
-// preparing all the functions for the bot to execute
-const ping = (message) => message.reply(`Pong! ce message a une latence de ${ Date.now() - message.createdTimestamp}ms.`)
-const wrongCommand = (message) => message.reply('désolé mais cette commande n\'est pas prise en charge par le bot,' +
-    ' utilise `//help` pour afficher une liste des commandes supportées')
-const help = (message) => message.reply("Voici la liste des commandes qui sont actuellement supportées par le bot :" +
-    "\n\n\n     `//help` :   affiche ce message d'aide" +
-    "\n\n     `//ping` :   repond pong au message et indique le que le bot a mit a repondre")
-
-// Read from new messages add some actions depending on what they contains
-const prefix = "//"
-client.on("messageCreate", (message) => {
-    if (message.author.bot) return
-    if (!message.content.startsWith(prefix)) return
-
-    // do some work on the message to interpret the command later
-    const commandBody = message.content.slice(prefix.length);
-    const args = commandBody.split(' ');
-    const command = args.shift().toLowerCase();
-
-    switch (command) {
-        case 'ping': ping(message); break
-        case 'help': help(message); break
-        default: wrongCommand(message)
+class Bot {
+    constructor(Client, Intents) {
+        this.client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
+        this.prefix = '//'
     }
-});
 
-// Login to Discord with the client's token
-client.login(token);
+    splitMessage() {
+        const commandBody = this.message.content.slice(this.prefix.length)
+        this.args = commandBody.split(' ')
+        this.command = this.args.shift().toLowerCase()
+    }
+
+    ping() {
+        this.message.reply(`Pong! ce message a une latence de ${ Date.now() - this.message.createdTimestamp}ms.`)
+    }
+
+    help() {
+        this.message.reply("Voici la liste des commandes qui sont actuellement supportées par le bot :" +
+            "\n\n\n     `//help` :   affiche ce message d'aide" +
+            "\n\n     `//ping` :   repond pong au message et indique le temp que le bot a mit a repondre")
+    }
+
+    wrongCommand() {
+        this.message.reply('désolé mais cette commande n\'est pas prise en charge par le bot,' +
+            ' utilise `//help` pour afficher une liste des commandes supportées')
+    }
+
+    commandInterpreter() {
+        switch (this.command) {
+            case 'ping': this.ping(); break
+            case 'help': this.help(); break
+            default: this.wrongCommand()
+        }
+    }
+
+    messageListener() {
+        this.client.on("messageCreate", (message) => {
+            if (message.author.bot) return
+            if (!message.content.startsWith(this.prefix)) return
+            this.message = message
+            this.splitMessage()
+            this.commandInterpreter()
+        })
+    }
+
+    start(token) {
+        this.messageListener()
+        this.client.login(token)
+    }
+}
+
+const bot = new Bot(Client, Intents, token);
+
+bot.start(token)
