@@ -12,7 +12,11 @@ client.once('ready', () => {
 
 // preparing all the functions for the bot to execute
 const ping = (message) => message.reply(`Pong! ce message a une latence de ${ Date.now() - message.createdTimestamp}ms.`)
-const wrongCommand = (message) => message.reply('désolé mais cette commande n\'est pas prise en charge par le bot')
+const wrongCommand = (message) => message.reply('désolé mais cette commande n\'est pas prise en charge par le bot,' +
+    ' utilise `//help` pour afficher une liste des commandes supportées')
+const help = (message) => message.reply("Voici la liste des commandes qui sont actuellement supportées par le bot :" +
+    "\n\n\n     `//help` :   affiche ce message d'aide" +
+    "\n\n     `//ping` :   repond pong au message et indique le que le bot a mit a repondre")
 
 // Read from new messages add some actions depending on what they contains
 const prefix = "//"
@@ -27,6 +31,7 @@ client.on("messageCreate", (message) => {
 
     switch (command) {
         case 'ping': ping(message); break
+        case 'help': help(message); break
         default: wrongCommand(message)
     }
 });
