@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to Eventbrite-remastered</h1>
+<h1 align="center">Welcome to Microhack Docs Bot Readme</h1>
 <p>
-  <a href="https://github.com/talmidiel/Eventbrite/blob/master/LICENSE.txt" target="_blank">
+  <a href="https://github.com/talmidiel/microhack_docs_bot/blob/master/LICENSE.txt" target="_blank">
   </a>
 </p>
 
@@ -47,7 +47,7 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2021 [Anthony Charpenay](https://github.com/talmidiel).
 <br />
-This project is [MIT](https://github.com/talmidiel/Eventbrite/blob/master/LICENSE.txt) licensed.
+This project is [MIT](https://github.com/talmidiel/microhack_docs_bot/blob/master/LICENSE.txt) licensed.
 
 ***
 _Base template for this README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
