@@ -5,6 +5,7 @@ class Bot {
     constructor(Client, Intents) {
         this.client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
         this.prefix = '//'
+        this.owner = '348886778406502401'
     }
 
     splitMessage() {
@@ -35,7 +36,7 @@ class Bot {
     }
 
     logoutCommand() {
-        if (this.message.author.id !== '348886778406502401') return this.statusChannel.send(
+        if (this.message.author.id !== this.owner) return this.statusChannel.send(
             'désolé, seul @talmidiel est authorisé a me deconnecter')
         this.statusChannel.send('Ok, je me déconnecte').then(() => this.client.destroy())
     }
