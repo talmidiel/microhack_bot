@@ -23,20 +23,25 @@
 - create a new bot app on discord dev dashboard
 - install the base packages using `$ npm install`
 - create the config.json file and put your discord bot token here :
+
+<small>config.json</small>
 ```json 
-// config.json
 { 
   "token": "your_token_goes_here"
 }
 ```
 - create the db folder and create the base files :
-
+- 
+<small>db/last_motivation_date.json</small>
 ```json
-// db/last_motivation_date.json
+
 {
   "lastSent": "0"
 }
-// db/motivation_messages.json
+```
+
+<small>db/motivation_messages.json</small>
+```json
 {
   "messages": ["some random messages"]
 }
