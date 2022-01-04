@@ -34,10 +34,10 @@
 you can feel free to fork this repo and try to tweak this project, however i wont accept direct contrtibutions to this project as i want to keep it personnal
 ## TODO
 
-- define the way i want to store and display the docs, and whether i shall use links to online docs or rather handwritten docs
-- move all the command related fuction to their own class
+- move all the command related fuction to their own class (Message class)
 - add a database in json files format
 - allow a authorized user to add a doc to the list
+- send a random motivation message everyday in the morning
 
 ## Show your support
 
