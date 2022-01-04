@@ -14,7 +14,7 @@ class Bot {
     }
 
     ping() {
-        this.message.reply(`Pong! ce message a une latence de ${ Date.now() - this.message.createdTimestamp}ms.`)
+        this.message.reply(`Pong! ce message a une latence de ${Date.now() - this.message.createdTimestamp}ms.`)
     }
 
     help() {
@@ -34,11 +34,18 @@ class Bot {
             ' utilise `//help` pour afficher une liste des commandes supportées')
     }
 
+    logoutCommand() {
+        if (this.message.author.id !== '348886778406502401') return this.statusChannel.send(
+            'désolé, seul @talmidiel est authorisé a me deconnecter')
+        this.statusChannel.send('Ok, je me déconnecte').then(() => this.client.destroy())
+    }
+
     commandInterpreter() {
         switch (this.command) {
             case 'ping': this.ping(); break
             case 'help': this.help(); break
             case 'github': this.github(); break
+            case 'logout': this.logoutCommand(); break
             default: this.wrongCommand()
         }
     }
@@ -53,8 +60,16 @@ class Bot {
         })
     }
 
-    start(token) {
+    baseInit() {
+        this.client.on('ready', () => {
+            this.statusChannel = this.client.channels.cache.get('927695794830733373')
+            this.statusChannel.send('Je suis en ligne !');
+        })
         this.messageListener()
+    }
+
+    start(token) {
+        this.baseInit()
         this.client.login(token)
     }
 }
