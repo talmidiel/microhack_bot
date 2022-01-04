@@ -17,11 +17,46 @@
 - node.js (v17+)
 - discord.js (v13+)
 
+## How to install
+
+- clone this repository
+- create a new bot app on discord dev dashboard
+- install the base packages using `$ npm install`
+- create the config.json file and put your discord bot token here :
+```json 
+// config.json
+{ 
+  "token": "your_token_goes_here"
+}
+```
+- create the db folder and create the base files :
+
+```json
+// db/last_motivation_date.json
+{
+  "lastSent": "0"
+}
+// db/motivation_messages.json
+{
+  "messages": ["some random messages"]
+}
+```
+- now launch the bot using `$ node bot/main.js`
+- if you want it to run when terminal is closed you can install forever using npm :
+```shell
+$ npm install forever -g
+$ forever -o output.log -e error.log start bot/main.js
+```
+
+## Adding this bot to your server
+ for now, the bot is only made for use by my team, but you can follow the installation instructions to install the project and launch it to your server
+
 ## Techs used
 
 - node.js
 - javascript
 - discord.js
+- AWS EC2 for deployment (under ubuntu 20.04 LTS)
 
 ## Author
 
@@ -32,12 +67,6 @@
 
 ## 🤝 Contributing
 you can feel free to fork this repo and try to tweak this project, however i wont accept direct contrtibutions to this project as i want to keep it personnal
-## TODO
-
-- move all the command related fuction to their own class (Message class)
-- add a database in json files format
-- allow a authorized user to add a doc to the list
-- send a random motivation message everyday in the morning
 
 ## Show your support
 
