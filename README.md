@@ -32,16 +32,8 @@
 }
 ```
 - create the db folder and create the base files :
-- 
-<small>db/last_motivation_date.json</small>
-```json
 
-{
-  "lastSent": "0"
-}
-```
-
-<small>db/motivation_messages.json</small>
+- <small>db/dailyMotivation.json</small>
 ```json
 {
   "messages": ["some random messages"]
