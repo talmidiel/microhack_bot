@@ -29,7 +29,7 @@ class Bot {
           if (err) throw err;
         });
       }
-    }, 60 * 60 * 1000);
+    }, 20 * 60 * 1000);
   }
 
   baseInit() {
