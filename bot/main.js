@@ -5,7 +5,7 @@ const Command = require('./commands');
 const lastSentDate = require('../db/last_motivation_date.json');
 const motivations = require('../db/motivation_messages.json');
 
-class Bot {
+module.exports = class Bot {
   constructor() {
     this.client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
     this.prefix = '//';
@@ -46,7 +46,3 @@ class Bot {
     this.client.login(token);
   }
 }
-
-const bot = new Bot(Client, Intents, token);
-
-bot.start();
