@@ -22,12 +22,13 @@
 - clone this repository
 - create a new bot app on discord dev dashboard
 - install the base packages using `$ npm install`
-- create the config.json file and put your discord bot token here :
+- create the config.json file and put your discord bot token and status/announcements channel here :
 
 <small>config.json</small>
 ```json 
 { 
   "token": "your_token_goes_here"
+  "statusChannel": "status_channel_id"
 }
 ```
 - create the db folder and create the base files :
@@ -46,12 +47,15 @@
   "messages": ["some random messages"]
 }
 ```
-- now launch the bot using `$ node bot/main.js`
-- if you want it to run when terminal is closed you can install forever using npm :
+- now launch the bot using `$ node run.js`
+- if you want it to run when terminal is closed you can run it using nohup : `nohup node run.js`
+- if you are deploying to EC2 use screen to launch it and be able to logout : 
 ```shell
-$ npm install forever -g
-$ forever -o output.log -e error.log start bot/main.js
+$ node run.js
+$ screen #then hit ctrl + a then d
+$ logout
 ```
+
 
 ## Adding this bot to your server
  for now, the bot is only made for use by my team, but you can follow the installation instructions to install the project and launch it to your server
