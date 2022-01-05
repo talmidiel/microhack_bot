@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Microhack Docs Bot Readme</h1>
+<h1 align="center">Welcome to MicroHack Bot Readme</h1>
 <p>
   <a href="https://github.com/talmidiel/microhack_docs_bot/blob/master/LICENSE.txt" target="_blank">
   </a>
@@ -10,7 +10,7 @@
 ![Custom badge](https://img.shields.io/badge/discord.js-v13-blue?style=flat&logo=discord)
 </br>
 > This is bot is a project I made during my free time when I was following my web dev bootcamp.
-> it's task is to deliver the docs need by my team directly inside the discord server to avoid having to search back the whole server to find it
+> it was originally intended to deliver docs for my coding team when we needed it, but quickly became member of the team that helped us with task that we didn't imagine we needed
 
 ## Prerequisites
 
