@@ -1,6 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const fs = require('fs');
-const { token } = require('../config.json');
+const { token, statusChannel } = require('../config.json');
 const Command = require('./commands');
 const lastSentDate = require('../db/last_motivation_date.json');
 const motivations = require('../db/motivation_messages.json');
@@ -34,7 +34,7 @@ class Bot {
 
   baseInit() {
     this.client.on('ready', () => {
-      this.statusChannel = this.client.channels.cache.get('927695794830733373');
+      this.statusChannel = this.client.channels.cache.get(statusChannel);
       this.statusChannel.send('Je suis en ligne !');
       this.dailyMotivation(this.statusChannel);
     });
