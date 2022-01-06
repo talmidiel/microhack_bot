@@ -7,7 +7,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/761f491a8316b47be429/maintainability)](https://codeclimate.com/github/talmidiel/microhack_docs_bot/maintainability)
 ![GitHub](https://img.shields.io/github/license/talmidiel/microhack_docs_bot)
 ![Custom badge](https://img.shields.io/badge/node.js-v17.3.0-blue?style=flat&logo=node.js)
-![Custom badge](https://img.shields.io/badge/discord.js-v13-blue?style=flat&logo=discord)
+![Custom badge](https://img.shields.io/badge/discord.js-v13.5.0-blue?style=flat&logo=discord)
 </br>
 > This is bot is a project I made during my free time when I was following my web dev bootcamp.
 > it was originally intended to deliver docs for my coding team when we needed it, but quickly became member of the team that helped us with task that we didn't imagine we needed
@@ -58,6 +58,7 @@ $ logout
 - javascript
 - discord.js
 - AWS EC2 for deployment (under ubuntu 20.04 LTS)
+- cron services with node-cron
 
 ## Author
 
