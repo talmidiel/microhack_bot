@@ -14,7 +14,7 @@ module.exports = {
     }
 
     const cronJobs = [];
-    cronJobs.push(new cron.CronJob('00 00 01 * * *', () => {
+    cronJobs.push(new cron.CronJob('00 00 17 * * *', () => {
       client.channels.cache.get(statusChannel).send('hey <@&599355469391200275> '
         + '\n N\'oubliez pas que cette journée est validante ! '
         + '\n n\'oubliez pas de mettre vos liens github sur le dashboard thp et n\'oubliez pas de push vos derniers changements reguliérement (genre maintenant :wink:)');
