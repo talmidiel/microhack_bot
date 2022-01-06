@@ -39,11 +39,11 @@
   "messages": ["some random messages"]
 }
 ```
-- now launch the bot using `$ node run.js`
-- if you want it to run when terminal is closed you can run it using nohup : `nohup node run.js`
+- now launch the bot using `$ node main.js`
+- if you want it to run when terminal is closed you can run it using nohup : `nohup node main.js`
 - if you are deploying to EC2 use screen to launch it and be able to logout : 
 ```shell
-$ node run.js
+$ node main.js
 $ screen #then hit ctrl + a then d
 $ logout
 ```
