@@ -10,4 +10,6 @@ module.exports = (client, Discord) => {
     client.channels.cache.get(statusChannel).send(message);
   });
   dailyMessage.start();
+
+  client.user.setActivity('//help, en attente...', { type: 'PLAYING' });
 };
