@@ -6,7 +6,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/761f491a8316b47be429/maintainability)](https://codeclimate.com/github/talmidiel/microhack_docs_bot/maintainability)
 ![GitHub](https://img.shields.io/github/license/talmidiel/microhack_docs_bot)
-![Custom badge](https://img.shields.io/badge/node.js-v17.3.0-blue?style=flat&logo=node.js)
+![Custom badge](https://img.shields.io/badge/node.js-v16.13.1-blue?style=flat&logo=node.js)
 ![Custom badge](https://img.shields.io/badge/discord.js-v13.5.0-blue?style=flat&logo=discord)
 </br>
 > This is bot is a project I made during my free time when I was following my web dev bootcamp.
@@ -14,7 +14,7 @@
 
 ## Prerequisites
 
-- node.js (v17+)
+- node.js (v16+)
 - discord.js (v13+)
 
 ## How to install
