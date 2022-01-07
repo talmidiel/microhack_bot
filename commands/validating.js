@@ -1,6 +1,6 @@
 const cron = require('cron');
 const motivations = require('../db/dailyMessage.json');
-const { statusChannel } = require('../config.json');
+const {statusChannel} = require('../config.json');
 
 let activated = false;
 
@@ -14,12 +14,12 @@ module.exports = {
     }
 
     const cronJobs = [];
-    cronJobs.push(new cron.CronJob('00 00 17 * * *', () => {
+    cronJobs.push(new cron.CronJob('00 35 01 * * *', () => {
       client.channels.cache.get(statusChannel).send('hey <@&599355469391200275> '
         + '\n N\'oubliez pas que cette journée est validante ! '
         + '\n n\'oubliez pas de mettre vos liens github sur le dashboard thp et n\'oubliez pas de push vos derniers changements reguliérement (genre maintenant :wink:)');
     }));
-    cronJobs.push(new cron.CronJob('00 00 21 * * *', () => {
+    cronJobs.push(new cron.CronJob('00 36 01 * * *', () => {
       client.channels.cache.get(statusChannel).send('hey <@&599355469391200275> '
         + '\n N\'oubliez pas que cette journée est validante ! '
         + '\n n\'oubliez pas de mettre vos liens github sur le dashboard thp et n\'oubliez pas de push vos derniers changements reguliérement (genre maintenant :wink:)'
@@ -28,11 +28,10 @@ module.exports = {
     cronJobs.forEach((cronJob) => cronJob.start());
     activated = true;
 
-    const cronKiller = new cron.CronJob('00 05 21 * * *', () => {
-      cronJobs.forEach((cronJob) => cronJob.destroy());
+    new cron.CronJob('30 36 01 * * *', () => {
+      cronJobs.forEach((cronJob) => cronJob.stop());
       activated = false;
-    });
-    cronKiller.start();
+    }).start();
 
     client.channels.cache.get(statusChannel).send(`messages de rappel de jour validant activés par <@${message.author.id}> !`);
   },
