@@ -14,8 +14,8 @@
 
 ## Prerequisites
 
-- node.js (v16+)
-- discord.js (v13+)
+- node.js (>=v16.17.0)
+- discord.js (>=v13.5.0)
 
 ## How to install
 
