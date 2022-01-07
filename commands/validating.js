@@ -25,10 +25,15 @@ module.exports = {
         + '\n n\'oubliez pas de mettre vos liens github sur le dashboard thp et n\'oubliez pas de push vos derniers changements reguliérement (genre maintenant :wink:)'
         + '\n bonne soirée !');
     }));
+    cronJobs.push(new cron.CronJob('00 01 09 * * *', () => {
+      client.channels.cache.get(statusChannel).send('hey <@&599355469391200275> '
+        + 'des corrections ont lieu ajourd\'hui, alors one se leve et on prepare ces 4 appels :wink:'
+        + 'bonne chance a vous, et bonne journée');
+    }));
     cronJobs.forEach((cronJob) => cronJob.start());
     activated = true;
 
-    new cron.CronJob('30 36 01 * * *', () => {
+    new cron.CronJob('10 01 09 * * *', () => {
       cronJobs.forEach((cronJob) => cronJob.stop());
       activated = false;
     }).start();
