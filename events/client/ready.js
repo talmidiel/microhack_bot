@@ -4,7 +4,10 @@ const motivations = require('../../db/dailyMessage.json');
 
 module.exports = (logger, client, Discord) => {
   try {
-    schedule.scheduleJob('0 0 9 * * *', () => {
+    schedule.scheduleJob('45 52 18 * * *', () => {
+      const day = new Date().toLocaleDateString('en-us', { weekday: 'long' })
+      if (day === 'Saturday' || day === 'Sunday') return;
+
       const message = motivations.messages[Math.floor(Math.random() * motivations.messages.length)];
       client.channels.cache.get(statusChannel).send(message);
     });
