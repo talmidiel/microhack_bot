@@ -44,7 +44,7 @@
 ```shell
 $ mkdir logs
 $ touch process.log
-$ touch errors.logs
+$ touch error.logs
 ```
 - now launch the bot using `$ node main.js`
 - if you want it to run when terminal is closed you can run it using nohup : `nohup node main.js`

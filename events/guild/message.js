@@ -18,7 +18,7 @@ module.exports = (logger, client, Discord, message) => {
     } catch (err) {
       logger({
         type: 'error',
-        content: `error while interpretting //${cmd}: \n ${err}`,
+        content: `error while executing //${cmd}: \n ${err}`,
       });
     }
   } else {
