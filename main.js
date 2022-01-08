@@ -8,8 +8,15 @@ const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAG
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 
-['commandHandler', 'eventHandler'].forEach(handler => {
+['commandHandler', 'eventHandler'].forEach((handler) => {
   require(`./handlers/${handler}`)(logger, client, Discord);
 });
 
-client.login(token);
+try {
+  client.login(token);
+} catch (err) {
+  logger({
+    type: 'error',
+    context: `unexpected error on client login: \n${err}`,
+  });
+}
