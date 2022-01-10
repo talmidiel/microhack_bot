@@ -21,31 +21,9 @@
 
 - clone this repository
 - create a new bot app on discord dev dashboard
-- install the base packages using `$ npm install`
-- create the config.json file and put your discord bot token, status/announcements channel, end debug mode (true/false) here :
-
-<small>config.json</small>
-```json 
-{ 
-  "token": "your_token_goes_here",
-  "statusChannel": "status_channel_id",
-  "debugMode": false
-}
-```
-- create the db folder and create the base files :
-
-<small>db/dailyMotivation.json</small>
-```json
-{
-  "messages": ["some random messages"]
-}
-```
-- create de logs folder and base files :
-```shell
-$ mkdir logs
-$ touch process.log
-$ touch error.logs
-```
+- cd to the bot directory
+- make the install script executable : `# chmod u+x install.sh`
+- use it to install the bot, answer the questions and your all set up : `./install.sh`
 - now launch the bot using `$ node main.js`
 - if you want it to run when terminal is closed you can run it using nohup : `nohup node main.js`
 - if you are deploying to EC2 use screen to launch it and be able to logout : 
