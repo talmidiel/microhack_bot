@@ -4,7 +4,7 @@ const motivations = require('../../db/dailyMessage.json');
 
 module.exports = (logger, client, Discord) => {
   try {
-    schedule.scheduleJob('45 52 18 * * *', () => {
+    schedule.scheduleJob('0 0 9 * * *', () => {
       const day = new Date().toLocaleDateString('en-us', { weekday: 'long' })
       if (day === 'Saturday' || day === 'Sunday') return;
 
