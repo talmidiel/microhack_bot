@@ -37,10 +37,12 @@ module.exports = {
     });
 
     fs.unlink(`db/${date}.pdf`, (err) => {
-      logger({
-        type: 'error',
-        content: `error while executing //docs: ${err}`,
-      });
+      if (err) {
+        logger({
+          type: 'error',
+          content: `error while executing //docs: ${err}`,
+        });
+      }
     });
   },
 };

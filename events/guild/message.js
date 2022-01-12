@@ -26,7 +26,7 @@ module.exports = (logger, client, Discord, message) => {
       + ' utilise `//help` pour afficher une liste des commandes supportées');
     logger({
       type: 'process',
-      content: `received ${command} wich is non existant`,
+      content: `received ${cmd} wich is non existant`,
     });
   }
 };
