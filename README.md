@@ -44,6 +44,7 @@ $ logout
 - discord.js
 - AWS EC2 for deployment (under ubuntu 20.04 LTS)
 - cron services with node-schedule-tz
+- puppeteer for the DevDocs scrapper
 
 ## Author
 
